@@ -7,7 +7,6 @@ function App() {
   return (
       <div data-test="component-app" className="App">
 
-          <h1>App</h1>
       </div>
   );
 }
