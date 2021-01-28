@@ -59,3 +59,33 @@ test("clicking on button increments counter display",()=>{
   expect(count).toBe("1");
 
 });
+
+//按下按鈕 counter是否減一
+test("clicking on button decrements counter display",()=>{
+
+  const wrapper = setup();
+
+  const button=findByTestAttribute(wrapper,'decrement-button');
+
+  button.simulate('click');
+
+  const count=findByTestAttribute(wrapper,"count").text();
+
+  expect(count).toBe("0");
+
+});
+
+//按下減號按鈕,是否出現錯誤訊息
+test("clicking on button decrements errorMessage display",()=>{
+
+  const wrapper = setup();
+
+  const button=findByTestAttribute(wrapper,'decrement-button');
+
+  button.simulate('click');
+
+  const errorMessage=findByTestAttribute(wrapper,"errorMessage").text();
+
+  expect(errorMessage).toBe("XXXX");
+
+});
